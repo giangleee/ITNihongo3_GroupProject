@@ -35,9 +35,9 @@ Go ahead and play with the app and the code. As you make code changes, the app w
 - Step 1: Create a branch with syntax feature/{name_controller}. Example: "feature/X"
 - Step 2: Upload your work on that branch
 - Step 3: Run 
-- ```
-- git pull origin main
-- ``` 
+```
+git pull origin main
+``` 
 - Step 4: Push your work on that branch
 - Step 5: Create pull request to main branch
 - Step 6: Announce to your's leader to review code and merge code. **DO NOT MERGE CODE BY YOURSELF**
