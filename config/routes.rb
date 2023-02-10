@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :impressions
   resources :videos
   resources :book_reviews
   get 'static_pages/home'
