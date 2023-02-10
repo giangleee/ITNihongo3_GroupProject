@@ -24,12 +24,12 @@ Go ahead and play with the app and the code. As you make code changes, the app w
 
 | Controller        | Assigned person's name  |
 | :---            |    :---                 |
-| X       | Lê Thanh Giang            |
-| X       | Phan Thị Trang Ngân     |
-| X     | Đặng Huy Hoàng          |
-| X     | Nguyễn Đình Đức          |
-| X     | Đoàn Trung Dũng          |
-| X     | Lê Văn Toàn          |
+| Cái nào chưa làm       | Lê Thanh Giang            |
+| Category       | Phan Thị Trang Ngân     |
+| Impression | Đặng Huy Hoàng   |
+| Video     | Nguyễn Đình Đức          |
+| Comment     | Đoàn Trung Dũng          |
+| Like     | Lê Văn Toàn          |
 
 ## How to turn in
 - Step 1: Create a branch with syntax feature/{name_controller}. Example: "feature/X"
