@@ -14,7 +14,6 @@ class VideosTest < ApplicationSystemTestCase
     visit videos_url
     click_on "New Video"
 
-    fill_in "Category", with: @video.category_id
     fill_in "Description", with: @video.description
     fill_in "Title", with: @video.title
     click_on "Create Video"
@@ -27,7 +26,6 @@ class VideosTest < ApplicationSystemTestCase
     visit videos_url
     click_on "Edit", match: :first
 
-    fill_in "Category", with: @video.category_id
     fill_in "Description", with: @video.description
     fill_in "Title", with: @video.title
     click_on "Update Video"
