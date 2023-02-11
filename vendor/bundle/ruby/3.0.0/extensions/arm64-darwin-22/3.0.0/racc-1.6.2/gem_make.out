@@ -1,0 +1,18 @@
+current directory: /Users/TrangNgan/Documents/HUST/Ky7/nhat nganh 3/ITNihongo3_GroupProject/vendor/bundle/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+/Users/TrangNgan/.rbenv/versions/3.0.5/bin/ruby -I /Users/TrangNgan/.rbenv/versions/3.0.5/lib/ruby/3.0.0 -r ./siteconf20230210-69096-ds5vel.rb extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /Users/TrangNgan/Documents/HUST/Ky7/nhat nganh 3/ITNihongo3_GroupProject/vendor/bundle/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= clean
+
+current directory: /Users/TrangNgan/Documents/HUST/Ky7/nhat nganh 3/ITNihongo3_GroupProject/vendor/bundle/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\=
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/TrangNgan/Documents/HUST/Ky7/nhat nganh 3/ITNihongo3_GroupProject/vendor/bundle/ruby/3.0.0/gems/racc-1.6.2/ext/racc/cparse
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20230210-69096-8c0phl/racc

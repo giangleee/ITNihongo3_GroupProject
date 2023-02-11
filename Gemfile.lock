@@ -91,10 +91,9 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    listen (3.1.5)
+    listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-      ruby_dep (~> 1.2)
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -107,7 +106,6 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.1)
     minitest (5.17.0)
     msgpack (1.6.0)
     net-imap (0.3.4)
@@ -120,8 +118,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.14.1)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.14.1-arm64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     public_suffix (5.0.1)
@@ -168,7 +165,6 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.2.5)
-    ruby_dep (1.5.0)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -195,8 +191,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.0)
-      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.6.0-arm64-darwin)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.11)
@@ -230,7 +225,7 @@ GEM
     zeitwerk (2.6.6)
 
 PLATFORMS
-  ruby
+  arm64-darwin-22
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
@@ -253,4 +248,4 @@ DEPENDENCIES
   webpacker (~> 4.0)
 
 BUNDLED WITH
-   2.1.2
+   2.4.6
