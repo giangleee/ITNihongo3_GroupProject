@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class CommentsControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -17,7 +17,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create comment" do
     assert_difference('Comment.count') do
-      post comments_url, params: { comment: {  } }
+      post comments_url, params: { comment: { comment: @comment.comment, user_id: @comment.user_id, video_id: @comment.video_id } }
     end
 
     assert_redirected_to comment_url(Comment.last)
@@ -34,7 +34,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update comment" do
-    patch comment_url(@comment), params: { comment: {  } }
+    patch comment_url(@comment), params: { comment: { comment: @comment.comment, user_id: @comment.user_id, video_id: @comment.video_id } }
     assert_redirected_to comment_url(@comment)
   end
 
@@ -42,6 +42,7 @@ class CommentsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Comment.count', -1) do
       delete comment_url(@comment)
     end
+
 
     assert_redirected_to comments_url
   end

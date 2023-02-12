@@ -5,6 +5,7 @@ class CommentsTest < ApplicationSystemTestCase
     @comment = comments(:one)
   end
 
+
   test "visiting the index" do
     visit comments_url
     assert_selector "h1", text: "Comments"
@@ -14,6 +15,9 @@ class CommentsTest < ApplicationSystemTestCase
     visit comments_url
     click_on "New Comment"
 
+    fill_in "Comment", with: @comment.comment
+    fill_in "User", with: @comment.user_id
+    fill_in "Video", with: @comment.video_id
     click_on "Create Comment"
 
     assert_text "Comment was successfully created"
@@ -24,6 +28,9 @@ class CommentsTest < ApplicationSystemTestCase
     visit comments_url
     click_on "Edit", match: :first
 
+    fill_in "Comment", with: @comment.comment
+    fill_in "User", with: @comment.user_id
+    fill_in "Video", with: @comment.video_id
     click_on "Update Comment"
 
     assert_text "Comment was successfully updated"

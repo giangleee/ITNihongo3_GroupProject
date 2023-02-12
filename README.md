@@ -1,24 +1,51 @@
-# README
+# IT_Nihongo3_MainSourceCode
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Quick Start
 
-Things you may want to cover:
+## To run this project locally
 
-* Ruby version
+### Prerequisites
+1. Make sure you've installed [npm] > 14, [yarn] ver 1.x, [ruby] ver 3.0.3
+2. To mannage ruby's package, you might install [rbenv] or [rvm]
+2. You must run commands in Linux or Powershell environment on Windows or Ubuntu terminal
 
-* System dependencies
+### First setup
+```
+bundle install
+yarn install --check-files
+rake db:migrate
+```
 
-* Configuration
+Go ahead and play with the app and the code. As you make code changes, the app will automatically reload.
 
-* Database creation
+# Job Assignment
 
-* Database initialization
+## Devided Controller's handler
 
-* How to run the test suite
+| Controller        | Assigned person's name  |
+| :---            |    :---                 |
+| Cái nào chưa làm       | Lê Thanh Giang            |
+| Category       | Phan Thị Trang Ngân     |
+| Impression | Đặng Huy Hoàng   |
+| Video     | Nguyễn Đình Đức          |
+| Comment     | Đoàn Trung Dũng          |
+| Like     | Lê Văn Toàn          |
 
-* Services (job queues, cache servers, search engines, etc.)
+## How to turn in
+- Step 1: Create a branch with syntax feature/{name_controller}. Example: "feature/X"
+- Step 2: Upload your work on that branch
+- Step 3: Run 
+```
+git pull origin main
+``` 
+- Step 4: Push your work on that branch
+- Step 5: Create pull request to main branch
+- Step 6: Announce to your's leader to review code and merge code. **DO NOT MERGE CODE BY YOURSELF**
 
-* Deployment instructions
 
-* ...
+[npm]: https://www.npmjs.com/
+[yarn]: https://yarnpkg.com/
+[ruby]: https://rubyinstaller.org/
+[rbenv]: https://github.com/rbenv/rbenv
+[rvm]: https://rvm.io/rvm/install
+

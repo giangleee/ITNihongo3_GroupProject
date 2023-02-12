@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
+  resources :likes
   resources :comments
   resources :categories
-  resources :impressions
   resources :videos
   resources :book_reviews
   get 'static_pages/home'
