@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  resources :likes
-  resources :comments
-  resources :categories
-  resources :videos
-  resources :book_reviews
   get 'static_pages/home'
+  resources :categories
+  resources :comments
+  get 'users/show'
   devise_for :users
-  devise_for :models
+  get 'videos/myVideo'
+
+  resources :videos do 
+    resources :likes
+  end
+  
+  root to: 'videos#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end
