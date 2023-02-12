@@ -13,27 +13,7 @@
  *= require_tree .
  *= require_self
  */
-@import '~bootswatch/dist/sketchy/variables';
-@import 'bootstrap-sprockets';
-@import '~bootstrap/scss/bootstrap';
-@import '~bootswatch/dist/sketchy/bootswatch';
-
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- #background{
+#background{
     /* background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0QDQ0NDQ0NDQ0NDQ0NDQ0NDQ8NDQ0NFREWFhURFRUYHSggGBolJxUVITEhJSkrLi4uFx8zOD8tNygtLisBCgoKBQUFDgUFDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIALcBEwMBIgACEQEDEQH/xAAZAAADAQEBAAAAAAAAAAAAAAAAAQIDBAf/xAAjEAEBAQEAAgICAgMBAAAAAAAAAQIRIXExQWGxgZESUcED/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APaAAB8LhynwEcPh2EBcHAAHAABggBgEBgAAOAAXBxRAXIOGALkHAYFwcMAXBwwBcBgAAAAAAAACNJgZykAXwrCzppYDOwl2J4BJUAT0yoAzIAYAAAgBwyOUASgCQfC4AAAAAAAAAAAAAAAACbB0+ps4CgUpgasa56QYNrEWFjfPTWwGNhNLE2AipWKCQVEBRpMDKmAIysEoKlVxBygfD4ZAViWvOpuQQBwAcFhKzegkKsSAAADoTQAMoYIs4cqkWc9A0gRK0lAlY3z0RA3+UWJxvnptfIMbEtNRNBNjOzjQWAjpps4cBXTSAUVhgClNNn3DlBedf004yVjXPQGueRxPALWUWNu9RrIMwZA0zrvj7/ZayhrjXfF+QZBesoBNAoBMqpWcqpQUBBwE2c9HmmizgN55HGWdNp5BPDxvno7E2A2s6ixON89NbAZWJXYQJsZ2ca2FYCIBZwQD6fUnKCk2fcMwGapFn3FZvQVnXPTX5ZHnXAVYfyZWAz1lDf5ZagJAANc674vynWUNM674vz+wZWBpYAc2slK24y3kFSqlZyqlBVI4VBNisa4CsB0TlnYVjLG+N5ZfMBnYeNc9KsRYDSxFgzrnpVAs36K5FVnX1f7BnYjjbWUWAkqOGBSqRYcoKH5hGDTN6OI9NM3oDN40iLBm8BVhanfaoVgMLCa6z1kAAAL/AMwgAILCioDHWRK21ljqAqVTOVcAAysAuKxvhdIHVLLOxNjLGuN5ZZ2AysE1z0qxNBVSUpgvGvq/xRrLNpjX1f4oM7EtdZRYCU2c9KpgmU02cOUFdOJMG+bLBYxl55bZ10Cl4uJsKXgKsZ7y1KwHMa95ZgAABQ4lQLzejWUxpm99g59ZErfWGOsgcOVEqgGoXVxOoBLxriOgHT2XzEVGdcafIIpdVSABIBrNfVTqJVKCQdID+UazxS55BlDPWeJBRy8SYOjOuixhLxvjXQTLxZWJl4B6jPWWyNQGBNLABXKG1iNQEnKk4DfOu+07wzlbZ132Dm1kRvvDGwApJwC1kotOsgFZvEQwaFUyqAk2cWQFKabOHKCukAAEvAAazln5/wBM944JWsss/IMAreeJAzl58EAdGNdFjCXjfGugUvFFYmXgJ1PJqoA7GdhY3zx9fppYDHUS1sRYCTlIwbZ132neWbXOu+wY2FGuozsAwUME6hRadZAHKmGCyIwCbOKAFDTwwMAADlIA2l7Pyy1kStO9/wCgxM7CAHLwgDoxrosYS8bZ10EWGvgBgvG+ev0gA21Gdgzr6+lWAzsJVKgUOEYLl77TqEroIB0gMAAnUKLTYANJgZkABcUAKGQAwAAEABXepoACAjACXgANZ/6QMgAAAA86MAKmgAQgAGAAHSAAAAAYAJsBAFAAAAAAgAGAAAAAAAAAAAAAAAH/2Q=='); */
 }
 #video-contain {

@@ -1,26 +1,81 @@
 
-<p id="notice"><%= notice %></p>
-<div id= "cate-btn">
-  <%= link_to 'All', videos_path(:cate => 'all')  %>
-  <% @categories.each do |category| %>
-    <%= link_to category.category, videos_path(:cate => category.id) %>
-  <% end %>
-</div>
-<div class "search-flex">
-<%= form_tag videos_path, :method => 'get' do %>
-  <%= text_field_tag :category, params[:category], :placeholder => 'Search by category' %>
-  <%= submit_tag 'Search by category', class: 'button-control btn btn-outline-dark' %>
-<% end %>
-</div>
-<br>
-<div class "search-flex">
-<%= form_tag videos_path, :method => 'get' do %>
-  <%= text_field_tag :title, params[:title], :placeholder => 'Search by title' %>
-  <%= submit_tag 'Search by title', class: 'button-control btn btn-outline-info' %>
-<% end %>
-</div>
+<%
+=begin%>
+ <p id="notice"><%= notice %></p> 
+<%
+=end%>
 
-<h1>Videos</h1>
+<div class="row" style="justify-content: center; padding-top: 1.5rem;">
+  <div class="col-12 col-xl-3" style="border: 1px solid #cfc3c3;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin: 0px 0.5rem 1.5rem;"><a href="<%= videos_path(:cate => 'all') %>">All</a></div>
+    <% @categories.each do |category| %>
+        <div class="col-12 col-xl-3" style="border: 1px solid #cfc3c3;
+    font-size: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 8px;
+    margin: 0px 0.5rem 1.5rem;"><a href="<%= videos_path(:cate => category.id) %>"><%= category.category %>
+        </a></div>
+    <% end %>
+  
+</div>
+<%# list category %>
+<div class="ms-5 pt-4">
+  <p class="fs-3">Filter tool</p>
+</div>
+<div class="search-flex">
+
+    <%
+=begin%>
+ <div class "search-flex">
+  <%= form_tag videos_path, :method => 'get' do %>
+    <%= text_field_tag :category, params[:category], :placeholder => 'Search by category' %>
+    <%= submit_tag 'Search by category', class: 'button-control btn btn-outline-dark' %>
+  <% end %>
+  </div> 
+<%
+=end%>
+
+  <%# Srearch box%>
+  <div class="search-flex ms-5 pt-4">
+  <%= form_tag videos_path, :method => 'get' do %>
+    <%= text_field_tag :title, params[:title], :placeholder => 'Search by title' %>
+    <%= submit_tag 'Search by title', class: 'button-control btn btn-outline-info ms-3' %>
+  <% end %>
+  </div>
+
+  <!-- Example split danger button -->
+<%
+=begin%>
+ <div class="btn-group">
+  <button type="button" class="btn btn-primary">List category</button>
+  <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="visually-hidden">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="<%= videos_path(:cate => 'all') %>">All</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <% @categories.each do |category| %>
+      <li>
+        <a class="dropdown-item" href="<%= videos_path(:cate => category.id) %>"><%= category.category %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div> 
+<%
+=end%>
+
+</div>
+<%# Srearch box%>
+
+<div class="ms-5 pt-4">
+  <h1>Videos</h1>
+</div>
 
 <table id="debug">
   <thead>
@@ -51,7 +106,9 @@
   <h1> there are no videos belongs to this category :< !!　申し訳ございません</h1>
 
 <% else %>	
-	<div class="row" id="video-contain">
+	<%
+=begin%>
+ <div class="row" id="video-contain">
 
 		<% @videos.each do |video| %>
 
@@ -73,7 +130,43 @@
 
 		<% end %>
 
-	</div>
+	</div> 
+<%
+=end%>
+
+  <div class="row">
+    <% @videos.each do |video| %>
+      <div class="col-12 col-xl-3 px-4" style="text-align: center;">
+      <div class="content">
+        <a href="/videos/<%= video.id %>">
+					<%= image_tag(video.thumbnail, size: "250", data: { title: video.title }, class: 'custom-image')%>
+          <br>
+          <div class="custom-title"><%= video.title %></div>
+				</a>
+        <br>
+        <p> <%= video.impressionist_count %> views</p> 
+
+        <p><%= video.likes.count %> <%= (video.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+      </div>
+        <%
+=begin%>
+ <p> category: <%= Category.find(video.category_id.to_i).category %></p> 
+<%
+=end%>
+        <%
+=begin%>
+ <p> duration: <%= ActiveStorage::Analyzer::VideoAnalyzer.new(video.clip.blob).metadata[:duration]%></p>  
+<%
+=end%>
+        <%
+=begin%>
+ <p> description: <%= video.description %></p> 
+<%
+=end%>
+      </div>
+
+		<% end %>
+  </div>
 <%end%>
 
 <br>
