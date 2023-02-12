@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class VideosControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -17,7 +17,7 @@ class VideosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create video" do
     assert_difference('Video.count') do
-      post videos_url, params: { video: { category_id: @video.category_id, description: @video.description, title: @video.title } }
+      post videos_url, params: { video: { description: @video.description, title: @video.title } }
     end
 
     assert_redirected_to video_url(Video.last)
@@ -34,7 +34,7 @@ class VideosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update video" do
-    patch video_url(@video), params: { video: { category_id: @video.category_id, description: @video.description, title: @video.title } }
+    patch video_url(@video), params: { video: { description: @video.description, title: @video.title } }
     assert_redirected_to video_url(@video)
   end
 

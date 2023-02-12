@@ -1,19 +1,107 @@
-<p id="notice"><%= notice %></p>
 
-<p>
+
+ <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+
+  <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+  <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+
+<h1>
   <strong>Title:</strong>
   <%= @video.title %>
-</p>
+</h1>
 
-<p>
+<p class="p-show">
+  <strong>Category:</strong>
+  <%= @video.category.category %>
+</p>
+  
+<video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="640"
+    height="264"
+    poster="<%= url_for(@video.thumbnail) %>"
+    data-setup="{}"
+  >
+    <source src="<%= url_for(@video.clip) %>" type="video/mp4" />
+    
+</video>
+
+<p class="p-show">
   <strong>Description:</strong>
   <%= @video.description %>
 </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @video.category_id %>
-</p>
+<p class="p-show"> <strong>View counts:</strong> <%= @video.impressionist_count %> views</p>
 
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+
+<p　class="p-show">　<strong><%= @video.likes.count %> <%= (@video.likes.count) == 1 ? 'Like' : 'Likes'%></strong></p>
+
+<div class="back-end">
+  <%= link_to 'Edit', edit_video_path(@video) %> |
+  <%= link_to 'Back', videos_path %>
+</div>
+<script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+
+
+<% pre_like = @video.likes.find { |like| like.user_id == current_user.id} %>
+<% if pre_like %>
+  <a> You liked the video!</a>
+  <%= button_to 'Unlike', video_like_path(@video, pre_like), method: :delete %>
+<% else %>
+  <%= button_to 'Like', video_likes_path(@video), method: :post %>
+<% end %>
+
+
+
+<%= form_with(model: @comment) do |form| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+        <% @comment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :video_id %>
+    <%= form.hidden_field :video_id, value: @video.id%>
+  </div>
+
+  <% if  user_signed_in? %>
+    <div class="field">
+      <%= form.label :comment, class: "p-show" %>
+      <%= form.text_field :comment, class: "form-control" %>
+    </div>
+
+    <div class="actions" >
+      <%= form.submit  %>
+    </div>
+  <% end %>
+<% end %>
+
+<% @comments.each do |comment| %>
+  <% if comment.video_id == @video.id%>
+  <div>
+    <div>
+      <br>
+      User: 
+      <%= User.find(comment.user_id.to_i).name %>
+    </div>
+    <strong>
+      Comment: 
+      <%= comment.comment %>
+    </strong>
+    <div>
+      Time: 
+      <%= comment.time %> 
+    </div> 
+  </div>
+  <% end %>
+<% end %>
