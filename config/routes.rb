@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :impressions
   get 'static_pages/home'
   resources :categories
   resources :comments
